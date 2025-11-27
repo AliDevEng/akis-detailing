@@ -1,10 +1,37 @@
+import ServiceCard from "../components/ServiceCard";
+
 const SERVICES = [
-    "Grovtvätt",
-    "Innertvätt",
-    "Sätestvätt",
-    "Polering",
-    "Vaxning",
-    "Keramisk lackbehandling"
+    
+    {
+        title: "Grovtvätt",
+        description: "Extrem tvätt som tar bort allt inkl. tjärr och asfalt",
+        image: "/images/grovtvatt.jpg"
+    },
+    {
+        title: "Innertvätt",
+        description: "Djup rengöring av interiör, mattor och paneler.",
+        image: "/images/innertvatt.jpg"
+    },
+    {
+        title: "Sätestvätt",
+        description: "Textil- och lädersäten rengörs på djupet.",
+        image: "/images/satestvatt.jpg",
+    },
+    {
+        title: "Polering",
+        description: "Tar bort repor och ger bilen ny glans.",
+        image: "/images/polering.jpg",
+    },
+    {
+        title: "Vaxning",
+        description: "Skyddar lacken och ger långvarig glans.",
+        image: "/images/vaxning.jpg",
+    },
+    {
+        title: "Keramisk lackbehandling",
+        description: "Premiumbehandling som skyddar lacken i upp till 5 år.",
+        image: "/images/keramisk.jpg",
+    },
 ];
 
 function Home () {
@@ -29,17 +56,15 @@ function Home () {
             {/* Tjänster */}
             <section className="px-4 pb-16 max-w-4xl mx-auto">
                 <h2 className="text-2xl font-semibold mb-4">Våra tjänster</h2>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {SERVICES.map((service) => (
-                    <div
-                    key={service}
-                    className="rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-3 shadow-sm"
-                    >
-                    <p className="font-medium">{service}</p>
-                    <p className="text-sm text-slate-400 mt-1">
-                        Professionell behandling anpassad efter din bils skick.
-                    </p>
-                    </div>
+                {SERVICES.map((item) => (
+                    <ServiceCard
+                        key={item.title}
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                    />    
                 ))}
                 </div>
             </section>
