@@ -1,3 +1,4 @@
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -23,6 +24,8 @@ function App() {
     <div className="bg-slate-900 min-h-screen">
       <Navbar currentPage={currentPage} onChangePage={setCurrentPage} />
       {renderPage()}
+      <FloatingWhatsApp />
+
     </div>
   );
 }
