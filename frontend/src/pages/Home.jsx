@@ -1,3 +1,4 @@
+import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import { startTransition } from "react";
 import ServiceCard from "../components/ServiceCard";
 
@@ -98,14 +99,16 @@ function Home() {
           <h2 className="text-2xl font-semibold mb-4">Våra tjänster</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {SERVICES.map((item) => (
-              <ServiceCard
-                key={item.title}
+            {SERVICES.map((item, index) => (
+            <FadeInWhenVisible key={item.title} delay={index * 120}>
+                <ServiceCard
                 title={item.title}
                 description={item.description}
                 image={item.image}
-              />
+                />
+            </FadeInWhenVisible>
             ))}
+
           </div>
         </div>
       </section>

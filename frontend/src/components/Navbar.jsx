@@ -19,7 +19,7 @@ function Navbar({ currentPage, onChangePage }) {
       <nav className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <div className="font-semibold tracking-tight text-lg">
+        <div className="font-semibold tracking-tight text-lg text-white">
           Akis <span className="text-sky-400">Detailing</span>
         </div>
 
