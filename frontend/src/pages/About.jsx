@@ -1,7 +1,7 @@
 import StatCounter from "../components/StatCounter";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 
-function About() {
+function About({ onChangePage }) {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 pt-24 px-4 pb-20">
       <div className="max-w-4xl mx-auto space-y-12">
@@ -105,14 +105,15 @@ function About() {
         {/* CTA */}
         <FadeInWhenVisible delay={260}>
           <section className="text-center pt-4">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
-                         bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl 
-                         transition transform hover:-translate-y-0.5"
-            >
-              Kontakta oss
-            </a>
+            <button
+                onClick={() => onChangePage("contact")}
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+                            bg-sky-500 hover:bg-sky-600 text-white shadow-lg hover:shadow-xl 
+                            transition transform hover:-translate-y-0.5"
+                >
+                Kontakta oss
+            </button>
+
 
             <p className="text-xs text-slate-400 mt-2">
               Vi svarar snabbast via WhatsApp.

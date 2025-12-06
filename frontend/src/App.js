@@ -12,14 +12,15 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case "about":
-        return <About />;
+        return <About onChangePage={setCurrentPage} />;
       case "contact":
-        return <Contact />;
+        return <Contact onChangePage={setCurrentPage} />;
       case "home":
       default:
-        return <Home />;
+        return <Home onChangePage={setCurrentPage} />;
     }
   };
+
 
   return (
     <div className="bg-slate-900 min-h-screen">
