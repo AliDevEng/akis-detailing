@@ -72,7 +72,7 @@ function Home() {
           alltid med fokus på detaljer och kundnöjdhet.
         </p>
 
-        <div className="flex flex-wrap items-center gap-4 mb-4">
+        <div className="flex flex-wrap items-center gap-4 mb-4 justify-center md:justify-start text-center md:text-left">
           <a
             href="#services"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold
@@ -87,17 +87,6 @@ function Home() {
             via WhatsApp-knappen nere till höger.
           </p>
         </div>
-
-        <div className="flex flex-wrap gap-6 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            Noga utvalda produkter & metoder
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-sky-400" />
-            Mobilvänlig bokning & kontakt
-          </div>
-        </div>
       </div>
 
       {/* Bild / highlight-kort */}
@@ -106,7 +95,7 @@ function Home() {
           {/* Hero-bild – byt till valfri av dina bilder */}
           <div className="relative h-52 md:h-64 overflow-hidden">
             <img
-              src="/images/grovtvatt.jpg" // byt till en hero-bild du gillar mest
+              src="/images/akis-hero-1.jpg" // byt till en hero-bild du gillar mest
               alt="Bilbehandling hos Akis Detailing"
               className="h-full w-full object-cover transform scale-105"
             />
@@ -136,7 +125,7 @@ function Home() {
         </div>
 
         {/* Litet stats-chip */}
-        <div className="absolute -bottom-4 right-3 md:-bottom-5 md:right-8">
+{/*         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 md:-bottom-5">
           <div className="rounded-2xl bg-slate-900/90 border border-slate-700/70 px-4 py-2 shadow-lg text-xs text-slate-200 flex items-center gap-3">
             <div className="flex flex-col">
               <span className="text-[10px] uppercase tracking-[0.16em] text-slate-400">
@@ -147,7 +136,8 @@ function Home() {
               </span>
             </div>
           </div>
-        </div>
+        </div> */}
+
       </div>
     </div>
   </section>
