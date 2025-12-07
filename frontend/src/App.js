@@ -6,6 +6,8 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import ScrollToTop from "./components/ScrollToTop";
+import Services from "./pages/Services";
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
         {/* SIDINNEHÅLL */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

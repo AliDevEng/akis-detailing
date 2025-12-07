@@ -1,11 +1,14 @@
-function ServiceCard({ title, description, image }) {
+import { SERVICES } from "../data/services";
+
+
+function ServiceCard({ title, description, image, price }) {
   return (
     <div
       className="
         group flex flex-col h-full
         rounded-2xl border border-slate-700/80 
         bg-slate-900/70 shadow-md 
-        hover:shadow-xl hover:border-sky-500/60 hover:bg-slate-900/90
+        hover:shadow-xl hover:border-sky-500/60 hover:bg-sky-900/90
         transition
       "
     >
@@ -42,11 +45,14 @@ function ServiceCard({ title, description, image }) {
         <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400">
           <span className="inline-flex items-center gap-1">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Rekommenderad behandling
+            Tillgänglig nu
           </span>
-          <span className="rounded-full border border-slate-600 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em]">
-            Tillgänglig
+
+          {price && (
+            <span className="rounded-full border border-slate-600 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em]">
+            Från {price} kr
           </span>
+          )}
         </div>
       </div>
     </div>

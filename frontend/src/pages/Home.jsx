@@ -1,39 +1,9 @@
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import { startTransition } from "react";
 import ServiceCard from "../components/ServiceCard";
+import { SERVICES } from "../data/services";
 
-const SERVICES = [
-  {
-    title: "Grovtvätt",
-    description: "Grundlig avspolning och rengöring av hela bilen.",
-    image: "/images/grovtvatt.jpg",
-  },
-  {
-    title: "Innertvätt",
-    description: "Djup rengöring av interiör, mattor och paneler.",
-    image: "/images/innertvatt.jpg",
-  },
-  {
-    title: "Sätestvätt",
-    description: "Textil- och lädersäten rengörs på djupet.",
-    image: "/images/satestvatt.jpg",
-  },
-  {
-    title: "Polering",
-    description: "Tar bort repor och ger bilen ny glans.",
-    image: "/images/polering.jpg",
-  },
-  {
-    title: "Vaxning",
-    description: "Skyddar lacken och ger långvarig glans.",
-    image: "/images/vaxning.jpg",
-  },
-  {
-    title: "Keramisk lackbehandling",
-    description: "Premiumbehandling som skyddar lacken i upp till 3 år.",
-    image: "/images/keramisk.jpg",
-  },
-];
+
 
 function Home() {
   return (
@@ -79,7 +49,7 @@ function Home() {
                       bg-sky-500 hover:bg-sky-600 text-white shadow-md hover:shadow-lg
                       transition transform hover:-translate-y-0.5"
           >
-            Se våra tjänster
+            Våra utvalda tjänster
           </a>
 
           <p className="text-xs text-slate-400 max-w-xs">
@@ -146,15 +116,16 @@ function Home() {
       {/* TJÄNSTER */}
       <section id="services" className="px-4 pb-20">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">Våra tjänster</h2>
+          <h2 className="text-2xl font-semibold mb-4">Vanliga tjänster</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {SERVICES.map((item, index) => (
-            <FadeInWhenVisible key={item.title} delay={index * 120}>
+            {SERVICES.map((service, index) => (
+            <FadeInWhenVisible key={service.id} delay={index * 120}>
                 <ServiceCard
-                title={item.title}
-                description={item.description}
-                image={item.image}
+                title={service.title}
+                description={service.shortDescription}
+                image={service.image}
+                price={service.price}
                 />
             </FadeInWhenVisible>
             ))}

@@ -27,7 +27,7 @@ function StatCounter({ label, value, suffix = "" }) {
     if (!hasStarted) return;
 
     let animationFrameId;
-    const duration = 1500; // 1.5 sek
+    const duration = 2500; // 2.5 sek
     const startTime = performance.now();
 
     const animate = (time) => {
