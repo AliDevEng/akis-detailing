@@ -1,7 +1,7 @@
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
-import { startTransition } from "react";
 import ServiceCard from "../components/ServiceCard";
 import { SERVICES } from "../data/services";
+import ImageSlider3DClick from "../components/ImageSlider3DClick";
 
 
 
@@ -112,6 +112,15 @@ function Home() {
     </div>
   </section>
 
+        {/* 3D GALLERI – före/efter preview */}
+        <ImageSlider3DClick
+          images={[
+            "/images/gallery/before-after-1.jpg",
+            "/images/gallery/before-after-2.jpg",
+            "/images/gallery/before-after-3.jpg",
+            "/images/gallery/before-after-4.jpg",
+          ]}
+        />
 
       {/* TJÄNSTER */}
       <section id="services" className="px-4 pb-20">
