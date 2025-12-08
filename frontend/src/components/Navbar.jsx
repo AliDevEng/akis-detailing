@@ -8,6 +8,7 @@ function Navbar() {
   const links = [
     { to: "/", label: "Hem" },
     { to: "/services", label: "Tjänster" },
+    { to: "/gallery", label: "Galleri" },
     { to: "/about", label: "Om oss" },
     { to: "/contact", label: "Kontakta oss" },
   ];

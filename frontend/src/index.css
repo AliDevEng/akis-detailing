@@ -69,3 +69,10 @@ body {
     height: 340px;
   }
 }
+
+/* Mobilvänlig höjd för galleri-bilder (stående format) */
+.ak-portrait-frame {
+  width: 100%;
+  max-width: 420px; /* lagom för iPhone Pro-skärm */
+  aspect-ratio: 9 / 16;
+}
