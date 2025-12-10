@@ -4,10 +4,10 @@ import GallerySlider from "../components/GallerySlider";
 
 const GALLERY_IMAGES = [
   // Byt ut dessa mot dina riktiga bildvägar
-  "/images/gallery/bil-1.jpg",
-  "/images/gallery/bil-2.jpg",
-  "/images/gallery/bil-3.jpg",
-  "/images/gallery/bil-4.jpg",
+  "/images/gallery/IMG_5326.jpeg",
+  "/images/gallery/IMG_5327.jpeg",
+  "/images/gallery/IMG_5328.jpeg",
+  "/images/gallery/IMG_5325.jpeg",
   "/images/gallery/bil-5.jpg",
   "/images/gallery/bil-6.jpg",
   "/images/gallery/bil-7.jpg",

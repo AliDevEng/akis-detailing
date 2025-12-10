@@ -98,8 +98,8 @@ function About() {
             </p>
 
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-              <StatCounter label="Antal projekt" value={148} />
-              <StatCounter label="Nöjda kunder" value={72} />
+              <StatCounter label="Antal projekt" value={192} />
+              <StatCounter label="Nöjda kunder" value={152} />
             </div>
           </section>
         </FadeInWhenVisible>
