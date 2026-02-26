@@ -115,10 +115,14 @@ function Home() {
         {/* 3D GALLERI – före/efter preview */}
         <ImageSlider3DClick
           images={[
-            "/images/gallery/before-after-1.jpg",
-            "/images/gallery/before-after-2.jpg",
-            "/images/gallery/before-after-3.jpg",
-            "/images/gallery/before-after-4.jpg",
+            "/images/gallery/light1.jpg",
+            "/images/gallery/ambient1.jpg",
+            "/images/gallery/brake1.jpg",
+            "/images/gallery/P-tak1.jpg",
+            "/images/gallery/P1.jpg",
+            "/images/gallery/light1.jpg",
+            "/images/gallery/f1.jpg",
+            "/images/gallery/T1.jpg",
           ]}
         />
 

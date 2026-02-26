@@ -19,6 +19,15 @@ export const SERVICES = [
     price: 399,
   },
   {
+    id: "ambient-light",
+    title: "Ambient Light (interiör)",
+    shortDescription: "Installation/justering av ambient belysning för en premium-känsla i kupén.",
+    longDescription:
+      "Vi installerar eller justerar ambient belysning i bilens interiör för en modern och exklusiv look. Passar dig som vill uppgradera känslan i kupén med snyggt ljus och ren montering.",
+    image: "/images/gallery/ambient1.jpg",
+    price: 699, 
+  },
+  {
     id: "satestvatt",
     title: "Sätestvätt",
     shortDescription: "Textil- och lädersäten rengörs på djupet.",

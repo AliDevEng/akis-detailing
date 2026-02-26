@@ -59,29 +59,32 @@ function Navbar() {
       {/* Mobile menu */}
       <div
         className={`
-          md:hidden bg-slate-900 border-t border-slate-800 px-4
-          origin-top transform transition-all duration-300 ease-out
-          ${isOpen ? "max-h-48 opacity-100 scale-y-100 py-3" : "max-h-0 opacity-0 scale-y-95 py-0 pointer-events-none"}
+          md:hidden bg-slate-900 px-4 overflow-hidden
+          transition-[max-height,opacity] duration-300 ease-out
+          ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
         `}
       >
-        <div className="space-y-2">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setIsOpen(false)}
-              className={`
-                block w-full rounded-lg px-3 py-2 text-center text-sm font-medium transition
-                ${
-                  location.pathname === link.to
-                    ? "bg-slate-800 text-sky-400"
-                    : "text-slate-300 hover:bg-slate-800/80 hover:text-sky-300"
-                }
-              `}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Border bara när menyn är öppen */}
+        <div className={`${isOpen ? "border-t border-slate-800 py-3" : ""}`}>
+          <div className="space-y-2">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setIsOpen(false)}
+                className={`
+                  block w-full rounded-lg px-3 py-2 text-center text-sm font-medium transition
+                  ${
+                    location.pathname === link.to
+                      ? "bg-slate-800 text-sky-400"
+                      : "text-slate-300 hover:bg-slate-800/80 hover:text-sky-300"
+                  }
+                `}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </header>

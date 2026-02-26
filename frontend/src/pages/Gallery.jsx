@@ -4,26 +4,19 @@ import GallerySlider from "../components/GallerySlider";
 
 const GALLERY_IMAGES = [
   // Byt ut dessa mot dina riktiga bildvägar
-  "/images/gallery/IMG_5326.jpeg",
+  "/images/gallery/brake1.jpg",
   "/images/gallery/IMG_5327.jpeg",
   "/images/gallery/IMG_5328.jpeg",
   "/images/gallery/IMG_5325.jpeg",
-  "/images/gallery/bil-5.jpg",
-  "/images/gallery/bil-6.jpg",
-  "/images/gallery/bil-7.jpg",
-  "/images/gallery/bil-8.jpg",
-  "/images/gallery/bil-9.jpg",
-  "/images/gallery/bil-10.jpg",
-  "/images/gallery/bil-11.jpg",
-  "/images/gallery/bil-12.jpg",
-  "/images/gallery/bil-13.jpg",
-  "/images/gallery/bil-14.jpg",
-  "/images/gallery/bil-15.jpg",
-  "/images/gallery/bil-16.jpg",
-  "/images/gallery/bil-17.jpg",
-  "/images/gallery/bil-18.jpg",
-  "/images/gallery/bil-19.jpg",
-  "/images/gallery/bil-20.jpg",
+  "/images/gallery/T1.jpg",
+  "/images/gallery/P-tak1.jpg",
+  "/images/gallery/P2.jpg",
+  "/images/gallery/P1.jpg",
+  "/images/gallery/light1.jpg",
+  "/images/gallery/IMG_5327.jpeg",
+  "/images/gallery/f1.jpg",
+  "/images/gallery/before-after-2.jpg",
+  "/images/gallery/before-after-1.jpg",
 ];
 
 function Gallery() {
@@ -51,28 +44,7 @@ function Gallery() {
           </section>
         </FadeInWhenVisible>
 
-        {/* Extra: liten översikt för desktop */}
-        <FadeInWhenVisible delay={0.2}>
-          <section className="hidden md:block">
-            <h2 className="text-sm font-semibold text-slate-200 mb-3">
-              Översikt (desktop)
-            </h2>
-            <div className="grid grid-cols-4 gap-3">
-              {GALLERY_IMAGES.map((src, i) => (
-                <div
-                  key={i}
-                  className="relative overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80"
-                >
-                  <img
-                    src={src}
-                    alt={`Galleri liten ${i + 1}`}
-                    className="h-28 w-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeInWhenVisible>
+        
       </div>
     </div>
   );
