@@ -10,15 +10,15 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background-color: #020617; /* ungefär tailwind slate-950 */
-  color: #e5e7eb; /* ungefär tailwind slate-200 */
+  background-color: #020617; /* ungefÃ¤r tailwind slate-950 */
+  color: #e5e7eb; /* ungefÃ¤r tailwind slate-200 */
 }
 
-/* === 3D Click Slider (stående mobilbilder) === */
+/* === 3D Click Slider (stÃ¥ende mobilbilder) === */
 
 .ak-slider3d-stage {
   position: relative;
-  width: 280px;        /* anpassat för mobil-porträtt */
+  width: 280px;        /* anpassat fÃ¶r mobil-portrÃ¤tt */
   height: 420px;
   margin-inline: auto;
   perspective: 1400px;
@@ -30,7 +30,7 @@ body {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
-  /* rotera hela ringen beroende på index */
+  /* rotera hela ringen beroende pÃ¥ index */
   transform: translateZ(-380px)
     rotateY(calc((360deg / var(--total)) * var(--index) * -1));
   cursor: pointer;
@@ -51,14 +51,14 @@ body {
 .ak-slider3d-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* viktigt för mobilbilder */
+  object-fit: cover;      /* viktigt fÃ¶r mobilbilder */
   border-radius: 1.25rem;
   border: 1px solid rgba(148, 163, 184, 0.8); /* slate-400 */
   background-color: #020617; /* slate-950 */
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-/* När ringen är stilla – framre bild känns lite “lyft” */
+/* NÃ¤r ringen Ã¤r stilla â€“ framre bild kÃ¤nns lite â€œlyftâ€ */
 .ak-slider3d-stage:hover .ak-slider3d-item img {
   transform: translateY(-4px);
 }
@@ -70,9 +70,10 @@ body {
   }
 }
 
-/* Mobilvänlig höjd för galleri-bilder (stående format) */
+/* MobilvÃ¤nlig hÃ¶jd fÃ¶r galleri-bilder (stÃ¥ende format) */
 .ak-portrait-frame {
   width: 100%;
-  max-width: 420px; /* lagom för iPhone Pro-skärm */
+  max-width: 420px; /* lagom fÃ¶r iPhone Pro-skÃ¤rm */
   aspect-ratio: 9 / 16;
 }
+

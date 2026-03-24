@@ -1,37 +1,44 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+"use client";
 
-function Navbar() {
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+type NavLink = {
+  to: string;
+  label: string;
+};
+
+const links: NavLink[] = [
+  { to: "/", label: "Hem" },
+  { to: "/services", label: "Tjanster" },
+  { to: "/gallery", label: "Galleri" },
+  { to: "/about", label: "Om oss" },
+  { to: "/contact", label: "Kontakta oss" },
+];
+
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
-  const links = [
-    { to: "/", label: "Hem" },
-    { to: "/services", label: "Tjänster" },
-    { to: "/gallery", label: "Galleri" },
-    { to: "/about", label: "Om oss" },
-    { to: "/contact", label: "Kontakta oss" },
-  ];
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-20 bg-slate-950/80 border-b border-slate-800 backdrop-blur">
-      <nav className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-        
-        {/* Logo */}
-        <div className="font-semibold tracking-tight text-base">
+    <header className="fixed left-0 right-0 top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+      <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+        <div className="text-base font-semibold tracking-tight">
           Akis <span className="text-sky-400">Detailing</span>
         </div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex gap-6 text-sm">
+        <div className="hidden gap-6 text-sm md:flex">
           {links.map((link) => (
             <Link
               key={link.to}
-              to={link.to}
+              href={link.to}
               className={`transition ${
-                location.pathname === link.to
-                  ? "text-sky-400"
-                  : "text-slate-300 hover:text-sky-300"
+                pathname === link.to ? "text-sky-400" : "text-slate-300 hover:text-sky-300"
               }`}
             >
               {link.label}
@@ -39,10 +46,11 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Hamburger */}
         <button
-          className="md:hidden text-slate-200 transition transform active:scale-95"
+          type="button"
+          className="text-slate-200 transition active:scale-95 md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle menu"
         >
           {isOpen ? (
             <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,26 +64,22 @@ function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`
-          md:hidden bg-slate-900 px-4 overflow-hidden
-          transition-[max-height,opacity] duration-300 ease-out
-          ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
+          overflow-hidden bg-slate-900 px-4 transition-[max-height,opacity] duration-300 ease-out md:hidden
+          ${isOpen ? "max-h-64 opacity-100" : "pointer-events-none max-h-0 opacity-0"}
         `}
       >
-        {/* Border bara när menyn är öppen */}
-        <div className={`${isOpen ? "border-t border-slate-800 py-3" : ""}`}>
+        <div className={isOpen ? "border-t border-slate-800 py-3" : ""}>
           <div className="space-y-2">
             {links.map((link) => (
               <Link
                 key={link.to}
-                to={link.to}
-                onClick={() => setIsOpen(false)}
+                href={link.to}
                 className={`
                   block w-full rounded-lg px-3 py-2 text-center text-sm font-medium transition
                   ${
-                    location.pathname === link.to
+                    pathname === link.to
                       ? "bg-slate-800 text-sky-400"
                       : "text-slate-300 hover:bg-slate-800/80 hover:text-sky-300"
                   }
@@ -91,4 +95,3 @@ function Navbar() {
   );
 }
 
-export default Navbar;
