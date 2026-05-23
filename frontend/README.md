@@ -1,166 +1,131 @@
-# 🚗✨ Akis Detailing
+# 🚗✨ Akis Detailing Frontend
 
-> **Premium car care — built in code, polished to perfection.**
+> **Premium car-care marketing, wrapped in a fast and polished React app.**
 
-A sleek, blazing-fast marketing site for **Akis Detailing** — a professional car-care business based in Skåne 🇸🇪. Every pixel is as clean as the cars we work on.
+This is the frontend for **Akis Detailing**: a responsive single-page website with service pages, gallery views, contact actions, custom animations, and a dark polished visual style.
 
 ---
 
 ## 🌟 What's Inside
 
-🎯 Cinematic hero with crossfade background  
-🔄 Infinite marquee of services  
-📊 Animated stat counters  
-🃏 Bento-grid service cards  
-🖼️ Horizontal scroll gallery showcase  
-📱 Mobile-first swipeable image slider  
-💬 One-tap WhatsApp & social contact  
-🌙 Dark-mode-only, glassmorphism UI throughout  
+- 🎬 Cinematic home page with image-led sections and custom motion effects
+- 🧭 Responsive navigation with route-based pages
+- 🧼 Services page driven by reusable service data
+- 🖼️ Gallery page with swipe-friendly image presentation
+- 💬 Contact page with WhatsApp, phone, Instagram, and TikTok entry points
+- 📊 Animated stat counters and route scroll restoration
+- 🎨 Tailwind CSS styling with custom CSS animations
 
 ---
 
 ## ⚡ Tech Stack
 
-| 🔧 Tool | 📦 Version | 💡 Why |
-|---|---|---|
-| ⚛️ React | 19 | UI framework |
-| 🔷 TypeScript | strict · no `any` | Full type safety |
-| 🎨 Tailwind CSS | 3 | Utility-first styling |
-| 🔀 React Router DOM | 7 | Client-side routing |
-| 🏗️ Create React App | 5 | Build tooling |
+| Tool | Version | Purpose |
+| --- | --- | --- |
+| ⚛️ React | 19.2.x | UI framework |
+| 🔷 TypeScript | CRA managed | Type-safe app code |
+| 🧭 React Router DOM | 6.30.x | Client-side routing |
+| 🎨 Tailwind CSS | 3.4.x | Utility-first styling |
+| 🏗️ Create React App / react-scripts | 5.0.1 | Build, dev server, and test tooling |
+| 🧪 Testing Library | Latest compatible | Component smoke tests |
+| 📈 web-vitals | 5.x | Optional performance reporting |
+
+💡 `react-router-dom` and `tailwindcss` are kept on the latest working versions for this Create React App setup. Router 7 and Tailwind 4 require tooling changes that do not fit cleanly with `react-scripts@5`.
 
 ---
 
 ## 🗂️ Project Structure
 
-```
+```text
 src/
-├── 🧩 components/
-│   ├── ContactButtons.tsx       # WhatsApp / Phone / Instagram / TikTok
-│   ├── FadeInWhenVisible.tsx    # Scroll-triggered fade-in wrapper
-│   ├── FloatingWhatsApp.tsx     # Fixed WhatsApp bubble
-│   ├── Footer.tsx
-│   ├── GallerySlider.tsx        # Swipeable mobile slider
-│   ├── ImageSlider3DClick.tsx   # 3D rotating carousel
-│   ├── Navbar.tsx               # Responsive nav with mobile menu
-│   ├── ScrollToTop.tsx          # Auto-scroll on route change
-│   ├── ServiceCard.tsx          # 3D tilt service card
-│   └── StatCounter.tsx          # Animated number counter
-│
-├── 📌 constants/
-│   └── contact.ts               # ☎️ All contact info in one place
-│
-├── 🗃️ data/
-│   ├── gallery.ts               # 🖼️ All image arrays
-│   └── services.ts              # 🛠️ Service catalog + prices
-│
-├── 🪝 hooks/
-│   └── useCounter.ts            # Animated counter (IntersectionObserver)
-│
-├── 📄 pages/
-│   ├── About.tsx                # Our story + values + stats
-│   ├── Contact.tsx              # Contact info + buttons
-│   ├── Gallery.tsx              # Full image gallery
-│   ├── Home.tsx                 # Landing page
-│   └── Services.tsx             # All services in detail
-│
-├── 🏷️ types/
-│   └── index.ts                 # Shared TypeScript interfaces
-│
-├── App.tsx                      # Router + layout shell
-├── index.css                    # Tailwind + custom animations
-└── index.tsx                    # Entry point
+  🧩 components/
+    ContactButtons.tsx
+    FadeInWhenVisible.tsx
+    FloatingWhatsApp.tsx
+    Footer.tsx
+    GallerySlider.tsx
+    ImageSlider3DClick.tsx
+    Navbar.tsx
+    ScrollToTop.tsx
+    ServiceCard.tsx
+    StatCounter.tsx
+  📌 constants/
+    contact.ts
+  🗃️ data/
+    gallery.ts
+    services.ts
+  🪝 hooks/
+    useCounter.ts
+  📄 pages/
+    About.tsx
+    Contact.tsx
+    Gallery.tsx
+    Home.tsx
+    Services.tsx
+  🏷️ types/
+    index.ts
+  App.tsx
+  index.css
+  index.tsx
 ```
 
 ---
 
-## 🗺️ Pages at a Glance
+## 🗺️ Pages
 
-| 🔗 Route | 📝 Description |
-|---|---|
-| `/` | 🏠 Hero · marquee · about · stats · services · gallery · values · CTA |
-| `/services` | 🛠️ Full service list with long descriptions & prices |
-| `/gallery` | 🖼️ Swipeable mobile-first image slider |
-| `/about` | 💬 Company story · values · animated counters |
-| `/contact` | 📞 WhatsApp · phone · Instagram · TikTok buttons |
+| Route | Description |
+| --- | --- |
+| `/` | 🏠 Home page with hero, services, stats, gallery preview, and CTA sections |
+| `/services` | 🧼 Full service list with descriptions and pricing |
+| `/gallery` | 🖼️ Image gallery for detailing work |
+| `/about` | 💬 Company story, values, and stats |
+| `/contact` | 📞 Contact options and social links |
 
 ---
 
 ## 🚀 Getting Started
 
-### 1️⃣ Install dependencies
+Install dependencies:
 
 ```bash
 cd frontend
 npm install
 ```
 
-### 2️⃣ Start the dev server
+Start the development server:
 
 ```bash
 npm start
 ```
 
-🌐 Opens at [http://localhost:3000](http://localhost:3000) — hot-reloads on every save.
+🌐 The app runs at [http://localhost:3000](http://localhost:3000).
 
-### 3️⃣ Type check
+Run tests:
 
 ```bash
-npx tsc --noEmit
+npm test -- --watchAll=false
 ```
 
-✅ Zero errors expected.
-
-### 4️⃣ Production build
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-📦 Output lands in `build/` — ready to deploy anywhere.
+📦 The production output is written to `build/`.
 
 ---
 
 ## ⚙️ Configuration
 
-### ☎️ Update contact info
+☎️ Update contact details in [`src/constants/contact.ts`](src/constants/contact.ts).
 
-Everything lives in one file — [`src/constants/contact.ts`](src/constants/contact.ts):
+🧼 Update service content in [`src/data/services.ts`](src/data/services.ts).
 
-```ts
-export const WHATSAPP_NUMBER = "46737158087";   // 📱 WhatsApp
-export const PHONE_NUMBER    = "+46737158087";   // 📞 Phone
-export const INSTAGRAM_URL   = "https://instagram.com/...";
-export const TIKTOK_URL      = "https://tiktok.com/@...";
-```
-
-Change it once → updates across the whole site. ✨
-
-### 🛠️ Add or edit services
-
-Open [`src/data/services.ts`](src/data/services.ts) and add a new entry to the `SERVICES` array.
-
-### 🖼️ Add gallery images
-
-1. Drop your image into `public/images/gallery/`
-2. Add its path to the right array in [`src/data/gallery.ts`](src/data/gallery.ts)
+🖼️ Add gallery images to `public/images/gallery/`, then reference them in [`src/data/gallery.ts`](src/data/gallery.ts).
 
 ---
 
-## 📐 Code Rules
+## 🔮 Backend
 
-| Rule | Detail |
-|---|---|
-| 🔷 TypeScript strict | `any` type is **banned** |
-| 🗃️ No inline data | Images / services / constants → `src/data/` & `src/constants/` |
-| 🪝 No inline hooks | Reusable logic → `src/hooks/` |
-| 💬 Minimal comments | Only comment the **why**, never the what |
-
----
-
-<div align="center">
-
-**Made with ❤️ & 🧴 for Akis Detailing**  
-*"Vi behandlar varje bil som om den vore vår egen."*
-
-</div>
+Coming Soon.

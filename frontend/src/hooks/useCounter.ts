@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 
 interface UseCounterResult {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: RefObject<HTMLDivElement | null>;
   count: number;
 }
 

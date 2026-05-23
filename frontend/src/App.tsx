@@ -11,7 +11,7 @@ import Gallery from "./pages/Gallery";
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <ScrollToTop />
       <div className="bg-slate-900 min-h-screen">
         <Navbar />
