@@ -1,33 +1,28 @@
-// src/components/ImageSlider3DClick.jsx
 import { useState } from "react";
 
-// Fallback-bilder om inget skickas in
-const DEFAULT_IMAGES = [
+const DEFAULT_IMAGES: string[] = [
   "/images/gallery/example-1.jpg",
   "/images/gallery/example-2.jpg",
   "/images/gallery/example-3.jpg",
 ];
 
-const ImageSlider3DClick = ({ images }) => {
-  // Se till att vi alltid har en array här
+interface Props {
+  images?: string[];
+}
+
+const ImageSlider3DClick = ({ images }: Props) => {
   const safeImages =
-    images && images.length && Array.isArray(images) ? images : DEFAULT_IMAGES;
+    images && images.length > 0 && Array.isArray(images)
+      ? images
+      : DEFAULT_IMAGES;
 
   const [index, setIndex] = useState(0);
   const total = safeImages.length;
 
-  // Om det mot förmodan inte finns några bilder alls
-  if (total === 0) {
-    return null;
-  }
+  if (total === 0) return null;
 
-  const nextImage = () => {
-    setIndex((prev) => (prev + 1) % total);
-  };
-
-  const prevImage = () => {
-    setIndex((prev) => (prev - 1 + total) % total);
-  };
+  const nextImage = () => setIndex((prev) => (prev + 1) % total);
+  const prevImage = () => setIndex((prev) => (prev - 1 + total) % total);
 
   return (
     <section className="relative mx-auto my-12 flex flex-col items-center gap-4 px-4">
@@ -37,26 +32,25 @@ const ImageSlider3DClick = ({ images }) => {
 
       <div className="relative z-10 flex flex-col items-center gap-4">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-sky-400/80">
-            Galleri
-          </p>
+          <p className="text-xs uppercase tracking-[0.35em] text-sky-400/80">Galleri</p>
           <h2 className="mt-2 text-2xl font-semibold md:text-3xl">
             Före &amp; efter – klicka för att bläddra
           </h2>
         </div>
 
-        {/* Själva 3D-karusellen */}
         <div className="ak-slider3d-stage">
           <div
             className="ak-slider3d-ring"
-            style={{ "--total": total, "--index": index }}
+            style={
+              { "--total": total, "--index": index } as React.CSSProperties
+            }
             onClick={nextImage}
           >
             {safeImages.map((src, i) => (
               <div
                 key={i}
                 className="ak-slider3d-item"
-                style={{ "--i": i }}
+                style={{ "--i": i } as React.CSSProperties}
               >
                 <img src={src} alt={`Galleri ${i + 1}`} />
               </div>
@@ -64,7 +58,6 @@ const ImageSlider3DClick = ({ images }) => {
           </div>
         </div>
 
-        {/* Knappar */}
         <div className="flex gap-3">
           <button
             type="button"

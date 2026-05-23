@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# 🚗✨ Akis Detailing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Premium car care — built in code, polished to perfection.**
 
-## Available Scripts
+A sleek, blazing-fast marketing site for **Akis Detailing** — a professional car-care business based in Skåne 🇸🇪. Every pixel is as clean as the cars we work on.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 What's Inside
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🎯 Cinematic hero with crossfade background  
+🔄 Infinite marquee of services  
+📊 Animated stat counters  
+🃏 Bento-grid service cards  
+🖼️ Horizontal scroll gallery showcase  
+📱 Mobile-first swipeable image slider  
+💬 One-tap WhatsApp & social contact  
+🌙 Dark-mode-only, glassmorphism UI throughout  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚡ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| 🔧 Tool | 📦 Version | 💡 Why |
+|---|---|---|
+| ⚛️ React | 19 | UI framework |
+| 🔷 TypeScript | strict · no `any` | Full type safety |
+| 🎨 Tailwind CSS | 3 | Utility-first styling |
+| 🔀 React Router DOM | 7 | Client-side routing |
+| 🏗️ Create React App | 5 | Build tooling |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🗂️ Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+├── 🧩 components/
+│   ├── ContactButtons.tsx       # WhatsApp / Phone / Instagram / TikTok
+│   ├── FadeInWhenVisible.tsx    # Scroll-triggered fade-in wrapper
+│   ├── FloatingWhatsApp.tsx     # Fixed WhatsApp bubble
+│   ├── Footer.tsx
+│   ├── GallerySlider.tsx        # Swipeable mobile slider
+│   ├── ImageSlider3DClick.tsx   # 3D rotating carousel
+│   ├── Navbar.tsx               # Responsive nav with mobile menu
+│   ├── ScrollToTop.tsx          # Auto-scroll on route change
+│   ├── ServiceCard.tsx          # 3D tilt service card
+│   └── StatCounter.tsx          # Animated number counter
+│
+├── 📌 constants/
+│   └── contact.ts               # ☎️ All contact info in one place
+│
+├── 🗃️ data/
+│   ├── gallery.ts               # 🖼️ All image arrays
+│   └── services.ts              # 🛠️ Service catalog + prices
+│
+├── 🪝 hooks/
+│   └── useCounter.ts            # Animated counter (IntersectionObserver)
+│
+├── 📄 pages/
+│   ├── About.tsx                # Our story + values + stats
+│   ├── Contact.tsx              # Contact info + buttons
+│   ├── Gallery.tsx              # Full image gallery
+│   ├── Home.tsx                 # Landing page
+│   └── Services.tsx             # All services in detail
+│
+├── 🏷️ types/
+│   └── index.ts                 # Shared TypeScript interfaces
+│
+├── App.tsx                      # Router + layout shell
+├── index.css                    # Tailwind + custom animations
+└── index.tsx                    # Entry point
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🗺️ Pages at a Glance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| 🔗 Route | 📝 Description |
+|---|---|
+| `/` | 🏠 Hero · marquee · about · stats · services · gallery · values · CTA |
+| `/services` | 🛠️ Full service list with long descriptions & prices |
+| `/gallery` | 🖼️ Swipeable mobile-first image slider |
+| `/about` | 💬 Company story · values · animated counters |
+| `/contact` | 📞 WhatsApp · phone · Instagram · TikTok buttons |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1️⃣ Install dependencies
 
-## Learn More
+```bash
+cd frontend
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2️⃣ Start the dev server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+🌐 Opens at [http://localhost:3000](http://localhost:3000) — hot-reloads on every save.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3️⃣ Type check
 
-### Analyzing the Bundle Size
+```bash
+npx tsc --noEmit
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ Zero errors expected.
 
-### Making a Progressive Web App
+### 4️⃣ Production build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run build
+```
 
-### Advanced Configuration
+📦 Output lands in `build/` — ready to deploy anywhere.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## ⚙️ Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ☎️ Update contact info
 
-### `npm run build` fails to minify
+Everything lives in one file — [`src/constants/contact.ts`](src/constants/contact.ts):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```ts
+export const WHATSAPP_NUMBER = "46737158087";   // 📱 WhatsApp
+export const PHONE_NUMBER    = "+46737158087";   // 📞 Phone
+export const INSTAGRAM_URL   = "https://instagram.com/...";
+export const TIKTOK_URL      = "https://tiktok.com/@...";
+```
+
+Change it once → updates across the whole site. ✨
+
+### 🛠️ Add or edit services
+
+Open [`src/data/services.ts`](src/data/services.ts) and add a new entry to the `SERVICES` array.
+
+### 🖼️ Add gallery images
+
+1. Drop your image into `public/images/gallery/`
+2. Add its path to the right array in [`src/data/gallery.ts`](src/data/gallery.ts)
+
+---
+
+## 📐 Code Rules
+
+| Rule | Detail |
+|---|---|
+| 🔷 TypeScript strict | `any` type is **banned** |
+| 🗃️ No inline data | Images / services / constants → `src/data/` & `src/constants/` |
+| 🪝 No inline hooks | Reusable logic → `src/hooks/` |
+| 💬 Minimal comments | Only comment the **why**, never the what |
+
+---
+
+<div align="center">
+
+**Made with ❤️ & 🧴 for Akis Detailing**  
+*"Vi behandlar varje bil som om den vore vår egen."*
+
+</div>

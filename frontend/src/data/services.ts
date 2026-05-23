@@ -1,5 +1,6 @@
-// src/data/services.js
-export const SERVICES = [
+import { Service } from "../types";
+
+export const SERVICES: Service[] = [
   {
     id: "grovtvatt",
     title: "Grovtvätt",
@@ -21,11 +22,12 @@ export const SERVICES = [
   {
     id: "ambient-light",
     title: "Ambient Light (interiör)",
-    shortDescription: "Installation/justering av ambient belysning för en premium-känsla i kupén.",
+    shortDescription:
+      "Installation/justering av ambient belysning för en premium-känsla i kupén.",
     longDescription:
       "Vi installerar eller justerar ambient belysning i bilens interiör för en modern och exklusiv look. Passar dig som vill uppgradera känslan i kupén med snyggt ljus och ren montering.",
     image: "/images/gallery/ambient1.jpg",
-    price: 699, 
+    price: 699,
   },
   {
     id: "satestvatt",

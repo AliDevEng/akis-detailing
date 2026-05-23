@@ -9,17 +9,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 
-
-
-
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="bg-slate-900 min-h-screen">
         <Navbar />
-
-        {/* SIDINNEHÅLL */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -27,7 +22,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
         <Footer />
         <FloatingWhatsApp />
       </div>

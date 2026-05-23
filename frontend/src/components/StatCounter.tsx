@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
-function StatCounter({ label, value, suffix = "" }) {
+interface Props {
+  label: string;
+  value: number;
+  suffix?: string;
+}
+
+function StatCounter({ label, value, suffix = "" }: Props) {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Observer som kollar när komponenten syns i viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,7 +20,7 @@ function StatCounter({ label, value, suffix = "" }) {
           }
         });
       },
-      { threshold: 0.4 } // ~40% av elementet ska synas
+      { threshold: 0.4 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -26,21 +31,19 @@ function StatCounter({ label, value, suffix = "" }) {
   useEffect(() => {
     if (!hasStarted) return;
 
-    let animationFrameId;
-    const duration = 2500; // 2.5 sek
+    let animationFrameId: number;
+    const duration = 2500;
     const startTime = performance.now();
 
-    const animate = (time) => {
+    const animate = (time: number) => {
       const elapsed = time - startTime;
-      const progress = Math.min(elapsed / duration, 1); // 0 → 1
-
-      const currentValue = Math.floor(progress * value);
-      setCount(currentValue);
+      const progress = Math.min(elapsed / duration, 1);
+      setCount(Math.floor(progress * value));
 
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(animate);
       } else {
-        setCount(value); // säkerställ exakt slutvärde
+        setCount(value);
       }
     };
 
@@ -52,8 +55,7 @@ function StatCounter({ label, value, suffix = "" }) {
   return (
     <div
       ref={ref}
-      className="rounded-2xl bg-slate-800/70 border border-slate-700/80 px-5 py-4 shadow-md
-                 flex flex-col items-center justify-center text-center"
+      className="rounded-2xl bg-slate-800/70 border border-slate-700/80 px-5 py-4 shadow-md flex flex-col items-center justify-center text-center"
     >
       <div className="text-3xl md:text-4xl font-semibold text-sky-300 mb-1">
         {count}

@@ -5,7 +5,7 @@ function Footer() {
         <div>
           <span className="font-semibold text-slate-200">Akis Detailing</span>
           <span className="mx-2">•</span>
-          <span>Professionell bilvård & biltvätt</span>
+          <span>Professionell bilvård &amp; biltvätt</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
