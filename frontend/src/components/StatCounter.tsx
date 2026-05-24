@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCounter } from "../hooks/useCounter";
 
 interface Props {
   label: string;
@@ -6,62 +6,19 @@ interface Props {
   suffix?: string;
 }
 
-function StatCounter({ label, value, suffix = "" }: Props) {
-  const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasStarted) {
-            setHasStarted(true);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, [hasStarted]);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-
-    let animationFrameId: number;
-    const duration = 2500;
-    const startTime = performance.now();
-
-    const animate = (time: number) => {
-      const elapsed = time - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      setCount(Math.floor(progress * value));
-
-      if (progress < 1) {
-        animationFrameId = requestAnimationFrame(animate);
-      } else {
-        setCount(value);
-      }
-    };
-
-    animationFrameId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [hasStarted, value]);
+function StatCounter({ label, value, suffix = "+" }: Props) {
+  const { ref, count } = useCounter(value);
 
   return (
     <div
       ref={ref}
-      className="rounded-2xl bg-slate-800/70 border border-slate-700/80 px-5 py-4 shadow-md flex flex-col items-center justify-center text-center"
+      className="ak-glass relative flex flex-col items-center justify-center rounded-2xl px-5 py-5 text-center"
     >
-      <div className="text-3xl md:text-4xl font-semibold text-sky-300 mb-1">
+      <div className="font-display text-3xl font-bold ak-gradient-text ak-counter-digit md:text-4xl">
         {count}
         {suffix}
       </div>
-      <div className="text-xs uppercase tracking-[0.16em] text-slate-400">
+      <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-zinc-400">
         {label}
       </div>
     </div>
